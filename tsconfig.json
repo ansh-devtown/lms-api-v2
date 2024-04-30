@@ -8,11 +8,19 @@
         "outDir": "dist",
         "noImplicitAny": true,
         "preserveConstEnums": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
         "baseUrl": ".",
         "paths": {
-            "@/*": ["src/*"]
+            "@/*": [
+                "src/*"
+            ]
         }
     },
-    "include": ["src/**/*.ts"],
-    "exclude": ["**/*.spec.ts"]
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "**/*.spec.ts"
+    ]
 }

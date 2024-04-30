@@ -1,26 +1,28 @@
-import { DataTypes, Model } from "sequelize";
-import { sequelize } from "@/config/connection";
+import { Model, HasMany } from "sequelize";
+import { Table, Column, PrimaryKey, AutoIncrement, DataType, AllowNull } from "sequelize-typescript";
 
-class User extends Model {}
+@Table({ tableName: "Users" })
+class User extends Model {
+    @PrimaryKey
+    @AutoIncrement
+    @Column(DataType.INTEGER)
+    id!: number;
 
-User.init(
-    {
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-                isEmail: {
-                    msg: "Must be a valid email"
-                }
-            }
-        },
-    },
-    {
-        sequelize,
-        modelName: 'users',
-        timestamps: true,
+    @AllowNull(false)
+    @Column(DataType.STRING)
+    name!: string;
+
+    @AllowNull(false)
+    @Column(DataType.STRING)
+    email!: string;
+
+    
+    constructor(values?: any, options?: any) {
+        super(values, options);
+        this.id!;
+        this.name!;
+        this.email!;
     }
-)
+}
 
 export default User;
