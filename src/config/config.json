@@ -1,0 +1,9 @@
+{
+    "dev": {
+        "DB_USER": "postgres",
+        "DB_PASS": "aimbot",
+        "DB_HOST": "localhost",
+        "DB_NAME": "devtown",
+        "NODE_ENV": "development"
+    }
+}
